@@ -21,6 +21,11 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Stateless JWT security with role-based access control (FR-01.3).
+ * Route-level rules follow the SRS use-case/role matrix (SRS 4.2);
+ * finer rules are applied with @PreAuthorize in controllers.
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -34,6 +39,7 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+        // NFR-05: BCrypt for all stored passwords
         return new BCryptPasswordEncoder();
     }
 

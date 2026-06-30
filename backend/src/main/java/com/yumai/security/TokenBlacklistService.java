@@ -7,6 +7,10 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * In-memory blacklist so logged-out JWTs are rejected before expiry (FR-01.5).
+ * Entries are purged once the token would have expired anyway.
+ */
 @Service
 public class TokenBlacklistService {
 

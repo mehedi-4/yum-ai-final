@@ -12,6 +12,7 @@ import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
+/** Issues and validates stateless JWT tokens (FR-01.2). */
 @Service
 public class JwtService {
 
